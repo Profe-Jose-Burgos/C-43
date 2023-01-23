@@ -1,2 +1,2 @@
 # C-43
-Jean Carlos Rodríguez Quintero -Joseph Jahir Delgado Corella  -Ivan Vergara -Raúl Omar Gutierrez Becerra
+Jean Carlos Rodríguez Quintero -Joseph Jahir Delgado Corella -Raúl Omar Gutierrez Becerra
