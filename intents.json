@@ -1,0 +1,294 @@
+{
+    "intents": [
+        {
+            "tag": "saludos",
+            "patterns": [
+                "hola",
+                "buenos dias",
+                "buenas tardes",
+                "buenas noches",
+                "como estas",
+                "hay alguien ahi?",
+                "hey",
+                "saludos",
+                "que tal"
+            ],
+            "responses": [
+                "Hola soy Teo , tu asesor de compras para tu futuro autom.\n \u00bfEn qu\u00e9 puedo ayudarte? "
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "compras",
+            "patterns": [
+                "consultar precios",
+                "comprar un auto",
+                "averiguar precio",
+                "busco un coche",
+                "informacion",
+                "necesito ayuda con",
+                "me puede colaborar",
+                "busco un auto",
+                "que carros tienen"
+            ],
+            "responses": [
+                "Perfecto, \u00bfQuieres probar una busqueda directa o deseas una recomendacion basada en caracter\u00edsticas?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "busqueda_directa",
+            "patterns": [
+                "busqueda directa",
+                "directo",
+                "de inmediato",
+                "busqueda inmediata"
+            ],
+            "responses": [
+                "\u00bfQu\u00e9 tipo de veh\u00edculo te gustar\u00eda. Por ejemplo: sed\u00e1n, pickup, camioneta..."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "tipo",
+            "patterns": [
+                "sedan",
+                "pickup",
+                "camioneta",
+                "coupe",
+                "deportivos"
+            ],
+            "responses": [
+                "\u00bfAlguna marca en particular?",
+                "\u00bfTiene alguna marca en mente?",
+                "\u00bfQu\u00e9 marca le gustar\u00eda?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "marca",
+            "patterns": [
+                "nissan",
+                "honda",
+                "toyota",
+                "ford",
+                "isuzu",
+                "audi",
+                "bmw",
+                "subaru",
+                "mitsubihi",
+                "corvette"
+            ],
+            "responses": [
+                "Listo, proceder\u00e9 a realizar la busqueda en bod\u00e9ga del tipo y marca seleccionado"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "recomendacion",
+            "patterns": [
+                "recomendaci\u00f3n",
+                "recomiendes algo",
+                "necesito recomendaci\u00f3n",
+                "que me recomiendas",
+                "necesito algunas espec\u00edficaciones"
+            ],
+            "responses": [
+                "Buena elecci\u00f3n. por favor siga estas instrucciones: \n Revisaremos las caracter\u00edstica una a una. Por ejemplo, a\u00f1o del auto: 2020 . Si necesitas ayuda con alg\u00fan concepto, escribe la palabra asistencia."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "anho_del_auto",
+            "patterns": [
+                "a\u00f1o",
+                "a\u00f1o:",
+                "del a\u00f1o"
+            ],
+            "responses": [
+                "\u00bfCon cuantos caballos de fuerza?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "caballos_de_fuerza",
+            "patterns": [
+                "120 caballos de fuerza",
+                "caballos de fuerza:",
+                "potencia de:"
+            ],
+            "responses": [
+                "\u00bfQu\u00e9 precio tiene en mente?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "precio_esperado",
+            "patterns": [
+                "12 000 d\u00f3lares",
+                "precio: 30000",
+                "costo: 25000"
+            ],
+            "responses": [
+                "\u00bfCu\u00e1l quiere que sea el rendimiento de combustible?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "consumo_combustible",
+            "patterns": [
+                "cosumo:",
+                "que sea econ\u00f3mico",
+                "50 kil\u00f3metros por gal\u00f3n"
+            ],
+            "responses": [
+                "\u00bfCu\u00e1l quiere que sea el tipo de combustible? \n Gasolina, Diesel o El\u00e9ctrico."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "tipo_de_combustible",
+            "patterns": [
+                "combustible:",
+                "gasolina",
+                "diesel",
+                "el\u00e9ctrico"
+            ],
+            "responses": [
+                "\u00bfCu\u00e1ntas plazas (asientos) aproximadamente necesita?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "n\u00famero_de_asientos",
+            "patterns": [
+                "asientos:",
+                "plazas:",
+                "espacioso",
+                "2 asientos"
+            ],
+            "responses": [
+                "\u00bfTransmisi\u00f3n manual o autom\u00e1tica?."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "tipo_de_transmisi\u00f3n",
+            "patterns": [
+                "transmisi\u00f3n manual",
+                "transmisi\u00f3n autom\u00e1tica",
+                "manual",
+                "autom\u00e1tica"
+            ],
+            "responses": [
+                "Listo. Ahora realizar\u00e9 una estimaci\u00f3n del veh\u00edculo disponible que mejor se ajusta a tus necesidades.\n Escribe 'recomendar ahora' para continuar."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "recomendar_ahora",
+            "patterns": [
+                "recomendar ahora"
+            ],
+            "responses": [
+                "Revisando caracter\u00edsticas en bodega"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "asistencia",
+            "patterns": [
+                "asistencia"
+            ],
+            "responses": [
+                "\u00bfPara cu\u00e1l concepto necesita ayuda?\n A\u00f1o del auto. Potencia en caballos de fuerza. Precio esperado. Consumo de combustible. Tipo de combustible. N\u00famero de asientos. Tipo de transmisi\u00f3n"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "despedidas",
+            "patterns": [
+                "chao",
+                "adios",
+                "hasta luego",
+                "nos vemos",
+                "bye",
+                "hasta pronto",
+                "hasta la proxima"
+            ],
+            "responses": [
+                "hasta luego, tenga un buen dia"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "agradecimientos",
+            "patterns": [
+                "gracias",
+                "muchas gracias",
+                "mil gracias",
+                "muy amable",
+                "se lo agradezco",
+                "fue de ayuda",
+                "gracias por la ayuda",
+                "muy agradecido",
+                "gracias por su tiempo",
+                "ty"
+            ],
+            "responses": [
+                "de nada",
+                "feliz por ayudarlo",
+                "gracias a usted",
+                "estamos para servirle",
+                "fue un placer"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "norespuesta",
+            "patterns": [
+                ""
+            ],
+            "responses": [
+                "no se detecto una respuesta"
+            ],
+            "context": [
+                ""
+            ]
+        }
+    ]
+}
