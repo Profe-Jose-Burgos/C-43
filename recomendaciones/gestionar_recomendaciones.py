@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[ ]:
-
-
+'''                     GESTION DE RECOMENDACIONES PARA EL USUARIO                      '''
+''' ------------------------------- LIBRERÍAS -------------------------'''
 import pandas as pd
 from datetime import datetime as d_t
 import pytz as tz
@@ -13,42 +11,47 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
+'''---------------------- LLAMAR UN PATH EXTERNO A LA CARPETA-------------------'''
+#  Se llama el path de las carpetas con los scripts necesarios
+sys.path.append(r'C:\Users\HP-LAPTOP\Documents\GitHub\C-43\procesar_recomendacion')
+#sys.path.append(r'C:\Users\HP-LAPTOP\Documents\GitHub\C-43\modelo_reconocimiento_imagenes')
 
-sys.path.asppend(r'C:\Users\HP-LAPTOP\Documents\GitHub\chat_bot\procesamiento_caracteristicas')
-sys.path.asppend(r'C:\Users\HP-LAPTOP\Documents\GitHub\chat_bot\modelo_reconocimiento_imagenes')
+# Ruta donde se guardan la bodega de autos
+path = r'C:\Users\HP-LAPTOP\Documents\GitHub\C-43\gestion_bodega\bodega_autos.json'
 
-path = r'C:\Users\HP-LAPTOP\Documents\GitHub\chat_bot\gestion_bodega\bodega_auto.json'
+# Llamo los scripts desde las rutas agregadas
+#import spacy_procesador_texto as spt
+#import predictor_de_tipo as pdt
 
-
-import spacy_procesador_texto as spt
-import predictor_de_tipo as pdt
-
+# Hora y fecha en Panamá: Se asigano zona horaria y retorna Hora de panamá
 def time_in_pty():
     time_zone = "America/Panama"
     pty = tz.timezone(time_zone)
-    date_pty = d+t.now(pty)
+    date_pty = d_t.now(pty)
     f_date_pty = date_pty.strftime("%m_%d__%H_%M")
     return f_date_pty
-
+# Abre el JSON
 def abrir_json(ruta:str):
     data_file= open(ruta).read()
     intents=json.loads(data_file)
     return intents
 
-def json_to_mutidf(dataframe):
+# Convierte el JSON en un DF Multi-index
+def json_to_multidf(dataframe):
     multi_df = pd.concat({k:pd.DataFrame(v).T for k, v in dataframe.items()}, axis=0)
     return multi_df
 
+# Se crea la imagen que se envirá como recomendación al usuario. Se basa en la busqueda en la bodega.
 def df_to_image(df,tipo):
     title_text = 'Consulta en Bodega'
     fecha= time_in_pty()
     fig_background_color = 'skyblue'
     fig_border = 'steelblue'
     data= df
-    archivo= f'C:Users/HP-LAPTOP/Documents/GitHub/chat-bot/recomendaciones/consultas/Consulta_{tipo}_{fecha}.png'
+    archivo= f'C:/Users/HP-LAPTOP/Documents/GitHub/C-43/consultas_realizadas/Consulta_{tipo}_{fecha}.png'
     
     column_headers = data.columns
-    row-headers = [x for x in data.index]
+    row_headers = [x for x in data.index]
     
     cell_text=[]
     for row in data.values:
@@ -94,14 +97,14 @@ def df_to_image(df,tipo):
     return archivo
 
 
-#Busqueda directa en bodega
-
+'''' ------------------------- Busqueda directa en bodega -------------------------------- '''
+#Buscará en el DF generado de la bodega
 def buscar_bodega(datos, df):
-    car_serie= pd.DataFrame(df.loc[datos[o]].loc[datos[1]])
+    car_serie= pd.DataFrame(df.loc[datos[0]].loc[datos[1]])
     return car_serie
 
-#preparar respuesta de busqueda
-
+# Preparar respuesta de busqueda
+# Genera un DF del auto encontrado en la Bodega
 def preparar_respuesta_busqueda(df):
     df.index=['Modelo', 'Año','Potencia', 'Rango de presio(US Dolar)', 'Consumo de combustible',
              'Tipo de Combustible', 'Plazas', 'Transmisión']
@@ -110,7 +113,7 @@ def preparar_respuesta_busqueda(df):
     return df
 
 
-#Main
+''' ---------------------------------- Main ------------------------------------ '''
 
 bodega_json =  abrir_json(path)
 
@@ -118,26 +121,25 @@ bodega_json =  abrir_json(path)
 df_bodega =  json_to_multidf(bodega_json)
 
 
-##################Funcion Busqueda Directa#################
-
+################## Funcion Busqueda Directa #################
+# Se integran las funciones anteriores
 def busqueda_directa(texto:list):
-    auto=buscar_bodega(texto,df_bodega)
-    datos=preparar_respuesta_busqueda(auto)
-    resultado=df_to_image(datos, "direct")
-    print(f'Salida:{resultados}')
-    return resultado
+    auto = buscar_bodega(texto,df_bodega)
+    datos = preparar_respuesta_busqueda(auto)
+    resultado = df_to_image(datos, "direct")
+    print(f'Salida:{resultado}')
+    return resultado # Retorna la ruta del archivo png creado
 
-#####################3Funcion Busqueda Caracteristicas###########
-
+##################### Funcion Busqueda Caracteristicas ###########
+# Se conecta al path para llamar la función recomendacion_caracteristicas desde spt
 def busqueda_caracteristicas(entrada):
     auto=spt.recomendacion_caracteristicas(entrada, df_bodega)
     resultado=df_to_image(auto,"recomend")
     print(f'Salida:{resultados}')
-    return resultado
+    return resultado # Retorna la ruta del archivo png creado
 
-
-##############Funcion de busqueda Url##########
-
+############# Funcion de busqueda Url ##########
+# Recibe la predición del modelo de reconocimiento de imágenes para retornar al usuario
 def referencia_url(entrada:int,df):
     tipo=entrada
     nt=[]
@@ -155,20 +157,21 @@ def referencia_url(entrada:int,df):
     
     df.columns = ['Modelo', 'Año','Potencia(HP)', 'Rango de Precios', 'Consumo de combustible', 'N° Asientos', 'Transmision' ]
     
-    df_result=pd.DataFrame(df.loc[nt[o]])
-    return df_resultado
+    df_result=pd.DataFrame(df.loc[nt[0]])
+    return df_resultado 
 
+# Llama al modelo de reconocimiento de imágenes para relizar una predicción 
 def busqueda_url(url):
-    entrada=pdt.hacer_prediccion(url)
-    auto=referencia_url(entrada,df_bodega)
-    resultado=df_to_image(auto,"url")
+    entrada = pdt.hacer_prediccion(url)
+    auto = referencia_url(entrada,df_bodega)
+    resultado = df_to_image(auto,"url")
     print(f'Salida:{resultados}')
-    return resultado
+    return resultado # Retorna la ruta del archivo png creado
 
-#prueba
-'''usuario=['sedán','nissan']
-busqueda_directa(usuario,df_bodega)
-
+# Prueba
+usuario=['sedán','nissan']
+busqueda_directa(usuario)
+'''
 try_it = ['año del auto: 2019','235 caballos de fuerza',  27900 dolares,'40 millas por galon', 'gasolina ', '4 asientos', 'automatica']
 busqueda_caracteristicas(try_it, df_bodega)'''
 
