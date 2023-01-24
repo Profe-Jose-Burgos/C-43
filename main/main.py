@@ -66,6 +66,8 @@ def identificar_mensajes():
     mensaje = element_message[0].text.lower().strip()
     print('MENSAJE ENTRANTE:', mensaje)
 
+    #BETA # Implementar la identificación de imágenes
+
     return normalizar(mensaje)
 def verificar_mensajes_pendientes(chat):
     # Verificar si existen mensajes pendientes.
@@ -175,7 +177,7 @@ def whatsapp_bot_init():
         
         msj_recibido = identificar_mensajes()
 
-        if msj_recibido == None:
+        if msj_recibido == None:    #BETA # En este punto implementar recepción de imágenes
             continue
         else:
             procesar_mensaje(msj_recibido)
