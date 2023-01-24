@@ -134,17 +134,18 @@ def buscar_chats():
 def preparar_respuesta(mensaje:str):
     print("Preparando la respuesta")
     # Se encarga de generar una respuesta. Aquí se integra el bot en el funcionamiento final.
-    # Test --------------------------
+
+    '''# Test --------------------------
     if mensaje.__contains__("hola"):
         respuesta = "Hola\nSoy un Bot"
     elif mensaje.__contains__("gracias"):
         respuesta = "Estamos para servirle"
     else:
-         respuesta = "Patrón no detectado"
+         respuesta = "Patrón no detectado"'''
 
     # Final --------------------------
 
-    #respuesta = bot(mensaje)
+    respuesta = bot(mensaje)
 
     return respuesta
 
@@ -185,12 +186,12 @@ def whatsapp_bot_init():
 
 #--------------------------------------- MAIN --------------------------------------------
 from admin_sesion import iniciar_mantener_sesion
-#from chatbot import bot
+from chatbot import bot
 
-#if __name__ == '__main__':
-iniciar_mantener_sesion()
-sleep(4) # Se debe considerar la rapidez del sistema en la computadora ejecutora. Sino, retorna un error.
-whatsapp_bot_init()
+if __name__ == '__main__':
+    iniciar_mantener_sesion()
+    sleep(4) # Se debe considerar la rapidez del sistema en la computadora ejecutora. Sino, retorna un error.
+    whatsapp_bot_init()
 
     
         

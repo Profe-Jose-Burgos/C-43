@@ -1,0 +1,20 @@
+# Librerías:
+
+    #keras                         2.10.0
+    #Keras-Preprocessing           1.1.2
+    #nltk                          3.7
+    #numpy                          1.24.1
+    #tensorflow                    2.10.1
+    #tensorflow-estimator          2.10.0
+    #tensorflow-io-gcs-filesystem  0.27.0
+    #matplotlib                   3.6.3
+    #Pillow                       9.4.0
+    # PyAutoIt                     0.6.5
+    #requests                     2.28.2
+    #scikit-learn                 1.2.0
+    #selenium                     4.7.2
+    #spacy                        3.5.0
+    #spacy-legacy                 3.0.11
+    #spacy-loggers                1.0.4
+    #regex                        2022.10.31
+    #pandas                       1.5.2

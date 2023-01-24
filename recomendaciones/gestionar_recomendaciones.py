@@ -14,6 +14,7 @@ import sys
 '''---------------------- LLAMAR UN PATH EXTERNO A LA CARPETA-------------------'''
 #  Se llama el path de las carpetas con los scripts necesarios
 sys.path.append(r'C:\Users\HP-LAPTOP\Documents\GitHub\C-43\procesar_recomendacion')
+
 #sys.path.append(r'C:\Users\HP-LAPTOP\Documents\GitHub\C-43\modelo_reconocimiento_imagenes')
 
 # Ruta donde se guardan la bodega de autos
@@ -169,8 +170,8 @@ def busqueda_url(url):
     return resultado # Retorna la ruta del archivo png creado
 
 # Prueba
-usuario=['sedán','nissan']
-busqueda_directa(usuario)
+#usuario=['sedán','nissan']
+#busqueda_directa(usuario)
 '''
 try_it = ['año del auto: 2019','235 caballos de fuerza',  27900 dolares,'40 millas por galon', 'gasolina ', '4 asientos', 'automatica']
 busqueda_caracteristicas(try_it, df_bodega)'''

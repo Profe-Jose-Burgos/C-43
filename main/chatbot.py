@@ -93,7 +93,7 @@ def get_response(ints, intents_json,text):
     for i in list_of_intents:
         if(i["tag"]==tag):
             result = random.choice(i["responses"]) # respuesta aleatoria del grupo posible
-            '''if(tag == "tipo" or tag == "marca"):
+            if(tag == "tipo" or tag == "marca"):
                 tipo_marca.append(text)     # BETA # Guarda la información dada por el usuario
             if(len(tipo_marca)>1): # Condición provisional
                 print("Buscando en bodega")
@@ -105,9 +105,9 @@ def get_response(ints, intents_json,text):
                 result = gest.busqueda_caracteristicas(features_user)
             if (tag == "url"):
                 print("Realizando busqueda por imagen")
-                result = gest.busqueda_url(text)'''
-            #else:
-            break
+                result = gest.busqueda_url(text)
+            else:
+                break
     return result
     
 ''' ---------------- ENVÍO DE RESPUESTA DEL CHATBOT ------------------ '''
@@ -136,12 +136,9 @@ def bot(text_us):
     return res
 
 ############################## MAIN - CHAT BOT - TEO #####################################
-'''
 if __name__ == '__main__':
     # Consola
     start_bot()
 
     # Integración Whatsapp
     answer = bot(texto_us)
-'''
-start_bot()
