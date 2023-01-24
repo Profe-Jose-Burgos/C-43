@@ -63,7 +63,7 @@ def identificar_mensajes():
     # Obtiene el elemento del último msj recibido
     element_message = element_box_message[posicion].find_elements(By.CLASS_NAME,"_21Ahp")
     # Obtiene el texto del último msj recibido y lo ajusta a minúsculas
-    mensaje = element_message[0].text.lower.strip()
+    mensaje = element_message[0].text.lower().strip()
     print('MENSAJE ENTRANTE:', mensaje)
 
     return normalizar(mensaje)
@@ -157,18 +157,40 @@ def procesar_mensaje(mensaje:str):
     webdriver.ActionChains(driver).send_keys(Keys.ESCAPE).perform()
 
     print("Respuesta:", respuesta)
-
-
+        
 def whatsapp_bot_init():
     global driver
     driver = crear_driver_session()
-
     espera = 1
 
     while espera == 1:
-        esperando = len(driver.find_elements(By.CLASS_NAME, "_1N3oL"))
+        espera = len(driver.find_elements(By.CLASS_NAME, "_3S2GF"))
         sleep(8) # Espera para Login
-        print("Inicio de sesion exitoso", esperando)
+        print("Inicio de sesion:", espera)
+
+    while True:
+        if not buscar_chats():
+            sleep(5)
+            continue
+        
+        msj_recibido = identificar_mensajes()
+
+        if msj_recibido == None:
+            continue
+        else:
+            procesar_mensaje(msj_recibido)
+
+
+#--------------------------------------- MAIN --------------------------------------------
+from admin_sesion import iniciar_mantener_sesion
+#from chatbot import bot
+
+#if __name__ == '__main__':
+iniciar_mantener_sesion()
+sleep(4) # Se debe considerar la rapidez del sistema en la computadora ejecutora. Sino, retorna un error.
+whatsapp_bot_init()
+
     
+        
     
     

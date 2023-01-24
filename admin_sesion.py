@@ -50,5 +50,5 @@ def iniciar_mantener_sesion():
 
 #-------------------------------- MAIN ------------------------------------
     
-'''if __name__ == '__main__'
-    iniciar_mantener_sesion()'''
+if __name__ == '__main__':
+    iniciar_mantener_sesion()
