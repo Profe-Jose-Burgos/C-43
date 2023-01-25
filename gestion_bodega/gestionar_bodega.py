@@ -8,7 +8,7 @@ def guardar_json(datos):
     json.dump(datos,archivo,indent=4)
 
 def start_bodega():
-    bodega = {"sedán":{
+    bodega = {"sedan":{
             "nissan":{
               "modelo":"sentra",
               "year":2022,

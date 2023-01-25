@@ -15,14 +15,14 @@ import sys
 #  Se llama el path de las carpetas con los scripts necesarios
 sys.path.append(r'C:\Users\HP-LAPTOP\Documents\GitHub\C-43\procesar_recomendacion')
 
-#sys.path.append(r'C:\Users\HP-LAPTOP\Documents\GitHub\C-43\modelo_reconocimiento_imagenes')
+sys.path.append(r'C:\Users\HP-LAPTOP\Documents\GitHub\C-43\modelo_reconocimiento_imagenes')
 
 # Ruta donde se guardan la bodega de autos
 path = r'C:\Users\HP-LAPTOP\Documents\GitHub\C-43\gestion_bodega\bodega_autos.json'
 
 # Llamo los scripts desde las rutas agregadas
 import spacy_procesador_texto as spt
-#import predictor_de_tipo as pdt
+import reconocimiento_imagenes as rix
 
 # Hora y fecha en Panamá: Se asigano zona horaria y retorna Hora de panamá
 def time_in_pty():
@@ -140,9 +140,10 @@ def busqueda_caracteristicas(entrada):
     return resultado # Retorna la ruta del archivo png creado
 
 ############# Funcion de busqueda Url ##########
+# BETA
 # Recibe la predición del modelo de reconocimiento de imágenes para retornar al usuario
-def referencia_url(entrada:int,df):
-    tipo=entrada
+'''def referencia_url(entrada:int,df):
+    tipo = entrada
     nt=[]
     if tipo == 4:
         nt.append("sedán")
@@ -155,28 +156,30 @@ def referencia_url(entrada:int,df):
     elif tipo == 1:
         nt.append('coupe')
     print(nt)
-    
+
     df.columns = ['Modelo', 'Año','Potencia(HP)', 'Rango de Precios', 'Consumo de combustible', 'N° Asientos', 'Transmision' ]
     
     df_result=pd.DataFrame(df.loc[nt[0]])
-    return df_resultado 
+    return df_resultado '''
 
 # Llama al modelo de reconocimiento de imágenes para relizar una predicción 
 def busqueda_url(url):
-    entrada = pdt.hacer_prediccion(url)
-    auto = referencia_url(entrada,df_bodega)
-    resultado = df_to_image(auto,"url")
-    print(f'Salida:{resultados}')
-    return resultado # Retorna la ruta del archivo png creado
+    entrada = rix.hacer_prediccion(url)
+    #auto = referencia_url(entrada,df_bodega)
+    #resultado = df_to_image(auto,"url")
+    print(f'Salida:{entrada}')
+    return entrada # Retorna la ruta del archivo png creado
+
+#################################### PRUEBAS EN CONSOLA ##########################
 
 # Prueba
 #usuario=['sedán','nissan']
 #busqueda_directa(usuario)
-'''
-try_it = ['año del auto: 2019','235 caballos de fuerza',  27900 dolares,'40 millas por galon', 'gasolina ', '4 asientos', 'automatica']
-busqueda_caracteristicas(try_it, df_bodega)'''
 
-#busqueda_url("https://www.nissan-cdn.net/content/dam/Nissan/mexico/vehicles/NP300/my21/vlp/np300-2021_blanca-exterior-piloto.jpg.ximg.l_full_h.smart.jpg")
+#try_it = ['año del auto: 2019','235 caballos de fuerza',  27900 dolares,'40 millas por galon', 'gasolina ', '4 asientos', 'automatica']
+#busqueda_caracteristicas(try_it, df_bodega)
+
+#busqueda_url("https://live.staticflickr.com/1560/24806278325_a7ce437786.jpg")
 
 
 

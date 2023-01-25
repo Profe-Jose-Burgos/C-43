@@ -238,6 +238,26 @@
             ]
         },
         {
+            "tag": "accede_compra",
+            "patterns": [
+                "quiero el carro",
+                "lo compro",
+                "como procedemos con el pago",
+                "donde pago",
+                "como hago para pagar",
+                "de una lo comprare ",
+                "en donde se efectuaria el pago",
+                "quiero pagar,donde lo hago?",
+                "cuando voy a pagar"
+            ],
+            "responses": [
+                "Maravilloso, puedes acceder a: https://jeanrodriguezq.github.io/contacto.html  para agendar una cita en la sucursal de tu preferencia."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
             "tag": "despedidas",
             "patterns": [
                 "chao",
@@ -249,7 +269,24 @@
                 "hasta la proxima"
             ],
             "responses": [
-                "Hasta luego, tenga un buen diaHasta luego, un placer ayudarle"
+                "Hasta luego, tenga un buen dia",
+                "Hasta luego, un placer ayudarle"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "asistencia",
+            "patterns": [
+                "no entiendo",
+                "no comprendi",
+                "como se usa",
+                "como se hace",
+                "me podria explicar"
+            ],
+            "responses": [
+                "No hay problema\\ Para usar mis servicios puedes consultar en: https://jeanrodriguezq.github.io/contacto.html "
             ],
             "context": [
                 ""
