@@ -4,7 +4,7 @@
 Jean Carlos Rodríguez Quintero -Joseph Jahir Delgado Corella -Raúl Omar Gutierrez Becerra
 
  
-##Funcionalidades: 
+## Funcionalidades: 
 
 Teo-Bot permite realizar recomendaciones a los usuarios en base a su selección. 
 Ya sea por medio de una busqueda directa en la bodega o una recomendación que mejor se aproxime a las características que desea el usuario. 
