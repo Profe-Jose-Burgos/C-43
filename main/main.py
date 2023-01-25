@@ -149,17 +149,39 @@ def preparar_respuesta(mensaje:str):
 
     return respuesta
 
+def procesar_imagen(ruta):
+    file = os.path.abspath(ruta)
+    clip_box = driver.find_element(By.XPATH,'//*[@id="main"]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/div') 
+    clip_box.click() 
+    sleep(1) 
+
+    image_box = driver.find_element(By.XPATH,'//*[@id="main"]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/span/div/div/ul/li[1]')
+    image_box.click()
+    sleep(2)
+
+    autoit.win_active("Abrir")
+    autoit.control_send("Abrir","Edit1",file)
+    autoit.control_send("Abrir","Edit1","{ENTER}")
+    sleep(2)
+
+    webdriver.ActionChains(driver).send_keys(Keys.ENTER).perform()
+    
+    
 def procesar_mensaje(mensaje:str):
     # Busqueda de la caja de input para los mensajes de salida
     chat_box = driver.find_element(By.XPATH,'//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]/p')
 
     respuesta = preparar_respuesta(mensaje) # Se refiere a la función anterior
 
-    chat_box.send_keys(respuesta, Keys.ENTER) # Envía la respuesta del Bot tras procesarla
-    sleep(2)
-    webdriver.ActionChains(driver).send_keys(Keys.ESCAPE).perform()
+    if ".png" in respuesta:
+        procesar_imagen(respuesta) # Respuestas con imagen PNG
 
-    print("Respuesta:", respuesta)
+    else:
+        chat_box.send_keys(respuesta, Keys.ENTER) # Envía la respuesta del Bot tras procesarla
+        sleep(2)
+        webdriver.ActionChains(driver).send_keys(Keys.ESCAPE).perform()
+
+        print("Respuesta:", respuesta)
         
 def whatsapp_bot_init():
     global driver
@@ -188,10 +210,10 @@ def whatsapp_bot_init():
 from admin_sesion import iniciar_mantener_sesion
 from chatbot import bot
 
-if __name__ == '__main__':
-    iniciar_mantener_sesion()
-    sleep(4) # Se debe considerar la rapidez del sistema en la computadora ejecutora. Sino, retorna un error.
-    whatsapp_bot_init()
+'''if __name__ == '__main__':'''
+iniciar_mantener_sesion()
+sleep(4) # Se debe considerar la rapidez del sistema en la computadora ejecutora. Sino, retorna un error.
+whatsapp_bot_init()
 
     
         

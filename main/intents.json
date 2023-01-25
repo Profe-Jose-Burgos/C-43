@@ -14,7 +14,8 @@
                 "que tal"
             ],
             "responses": [
-                "Hola soy Teo , tu asesor de compras para tu futuro autom.\n \u00bfEn qu\u00e9 puedo ayudarte? "
+                "Hola soy Teo , tu asesor de compras para tu futuro auto.\n \u00bfEn qu\u00e9 puedo ayudarte? ",
+                "Qu\u00e9 tal, soy Teo, tu asesor de compras de tu futuro auto.\n \u00bfEn qu\u00e9 puedo ayudarte? "
             ],
             "context": [
                 ""
@@ -34,7 +35,7 @@
                 "que carros tienen"
             ],
             "responses": [
-                "Perfecto, \u00bfQuieres probar una busqueda directa o deseas una recomendacion basada en caracter\u00edsticas?"
+                "Perfecto, \u00bfQuieres probar una busqueda directa, una recomendacion basada en caracter\u00edsticas?"
             ],
             "context": [
                 ""
@@ -88,7 +89,7 @@
                 "corvette"
             ],
             "responses": [
-                "Listo, proceder\u00e9 a realizar la busqueda en bod\u00e9ga del tipo y marca seleccionado"
+                "Listo, Te recomiendo este veh\u00edculo."
             ],
             "context": [
                 ""
@@ -101,7 +102,7 @@
                 "recomiendes algo",
                 "necesito recomendaci\u00f3n",
                 "que me recomiendas",
-                "necesito algunas espec\u00edficaciones"
+                "necesito algunas especificaciones"
             ],
             "responses": [
                 "Buena elecci\u00f3n. por favor siga estas instrucciones: \n Revisaremos las caracter\u00edstica una a una. Por ejemplo, a\u00f1o del auto: 2020 . Si necesitas ayuda con alg\u00fan concepto, escribe la palabra asistencia."
@@ -156,7 +157,7 @@
             "tag": "consumo_combustible",
             "patterns": [
                 "cosumo:",
-                "que sea econ\u00f3mico",
+                "consumo",
                 "50 kil\u00f3metros por gal\u00f3n"
             ],
             "responses": [
@@ -186,7 +187,6 @@
             "patterns": [
                 "asientos:",
                 "plazas:",
-                "espacioso",
                 "2 asientos"
             ],
             "responses": [
@@ -202,10 +202,11 @@
                 "transmisi\u00f3n manual",
                 "transmisi\u00f3n autom\u00e1tica",
                 "manual",
-                "autom\u00e1tica"
+                "autom\u00e1tica",
+                "automatica"
             ],
             "responses": [
-                "Listo. Ahora realizar\u00e9 una estimaci\u00f3n del veh\u00edculo disponible que mejor se ajusta a tus necesidades.\n Escribe 'recomendar ahora' para continuar."
+                "Listo.\n Escribe 'recomendar ahora' para continuar."
             ],
             "context": [
                 ""
@@ -217,19 +218,20 @@
                 "recomendar ahora"
             ],
             "responses": [
-                "Revisando caracter\u00edsticas en bodega"
+                "Creo que este auto te podr\u00eda interesar"
             ],
             "context": [
                 ""
             ]
         },
         {
-            "tag": "asistencia",
+            "tag": "url",
             "patterns": [
-                "asistencia"
+                "https://",
+                "http://"
             ],
             "responses": [
-                "\u00bfPara cu\u00e1l concepto necesita ayuda?\n A\u00f1o del auto. Potencia en caballos de fuerza. Precio esperado. Consumo de combustible. Tipo de combustible. N\u00famero de asientos. Tipo de transmisi\u00f3n"
+                "Ok, Basado en esa imagen, \u00bftal vez buscas algo como esto?"
             ],
             "context": [
                 ""
@@ -247,7 +249,7 @@
                 "hasta la proxima"
             ],
             "responses": [
-                "hasta luego, tenga un buen dia"
+                "Hasta luego, tenga un buen diaHasta luego, un placer ayudarle"
             ],
             "context": [
                 ""
@@ -268,11 +270,11 @@
                 "ty"
             ],
             "responses": [
-                "de nada",
-                "feliz por ayudarlo",
-                "gracias a usted",
-                "estamos para servirle",
-                "fue un placer"
+                "De nada",
+                "Feliz por ayudarlo",
+                "Gracias a usted",
+                "Estamos para servirle",
+                "Fue un placer"
             ],
             "context": [
                 ""
@@ -284,7 +286,10 @@
                 ""
             ],
             "responses": [
-                "no se detecto una respuesta"
+                "Podr\u00edas repetir de nuevo la informaci\u00f3n, por favor",
+                "Podr\u00edas reformular tu mensaje por favor",
+                "Disculpe, no he podido procesar su solicitud.\\ Podr\u00eda repetirla.",
+                "Disculpe, podr\u00eda verificar que la informaci\u00f3n proporcionada est\u00e9 bien escrita, por favor."
             ],
             "context": [
                 ""

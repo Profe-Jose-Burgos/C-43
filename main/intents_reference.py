@@ -1,6 +1,7 @@
+''' INTERACCIONES CON EL USUARIO '''
 import json
 
-def guardar_json():
+def guardar_json(datos):
     archivo = open("intents.json","w")
     json.dump(datos, archivo, indent=4)
 
@@ -22,7 +23,7 @@ def start_intents():
                     "que tal"
                 ],
                 "responses": [
-                    "Hola soy Teo , tu asesor de compras para tu futuro autom.\n ¿En qué puedo ayudarte? "
+                    "Hola soy Teo , tu asesor de compras para tu futuro auto.\n ¿En qué puedo ayudarte? ",
                     "Qué tal, soy Teo, tu asesor de compras de tu futuro auto.\n ¿En qué puedo ayudarte? "
                 ],
                 "context": [
@@ -305,8 +306,9 @@ def start_intents():
                 ]
             }
         ]
-    }    
+    }
+    guardar_json(biblioteca)
 ########################## MAIN ##################################
 
-if __name__ = '__main__':
-    start_intents()
+#if __name__ = '__main__':
+start_intents()

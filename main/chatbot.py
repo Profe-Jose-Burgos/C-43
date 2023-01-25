@@ -7,8 +7,8 @@ from nltk.stem import SnowballStemmer
 from tensorflow.keras.models import load_model
 import sys
 
-# sys.path.append(directorio pendiente)
-# import gestinar_recomendacion as gestor
+sys.path.append(r'C:\Users\HP-LAPTOP\Documents\GitHub\C-43\recomendaciones')
+import gestionar_recomendaciones as gest
 
 tipo_marca = []
 features_user = []
@@ -98,11 +98,13 @@ def get_response(ints, intents_json,text):
             if(len(tipo_marca)>1): # Condición provisional
                 print("Buscando en bodega")
                 result = gest.busqueda_directa(tipo_marca) # Llama la función busqueda_directa
+                tipo_marca = []
             if(tag in user_data):
                 features_user.append(text)
             if(tag == "recomendar ahora"):
                 print(f"Preparando recomendación de {features_user}")
                 result = gest.busqueda_caracteristicas(features_user)
+                features_user = []
             if (tag == "url"):
                 print("Realizando busqueda por imagen")
                 result = gest.busqueda_url(text)

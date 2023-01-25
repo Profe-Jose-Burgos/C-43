@@ -21,7 +21,7 @@ sys.path.append(r'C:\Users\HP-LAPTOP\Documents\GitHub\C-43\procesar_recomendacio
 path = r'C:\Users\HP-LAPTOP\Documents\GitHub\C-43\gestion_bodega\bodega_autos.json'
 
 # Llamo los scripts desde las rutas agregadas
-#import spacy_procesador_texto as spt
+import spacy_procesador_texto as spt
 #import predictor_de_tipo as pdt
 
 # Hora y fecha en Panamá: Se asigano zona horaria y retorna Hora de panamá
