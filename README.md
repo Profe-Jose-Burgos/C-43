@@ -59,3 +59,4 @@ Contiene los elementos de entrenamiento del modelo de reconocimiento de
     * Spacy-legacy                 3.0.11
     * Spacy-loggers                1.0.4
     * Pandas                       1.5.2
+* Navegador Microsoft Edge      109.0.1518.55
