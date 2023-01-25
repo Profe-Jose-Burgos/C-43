@@ -1,8 +1,10 @@
 # C-43
 
 ![TEO-BOT](/logos/teo.jpg)
-## Chat Bot - Teo
-Jean Carlos Rodríguez Quintero -Joseph Jahir Delgado Corella -Raúl Omar Gutierrez Becerra
+## Chat Bot - TEO - Desarrolladores
+*Joseph Jahir Delgado Corella 
+*Jean Carlos Rodríguez Quintero
+*Raúl Omar Gutierrez Becerra
 
  
 ## Funcionalidades: 
