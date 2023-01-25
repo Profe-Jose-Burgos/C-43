@@ -19,23 +19,43 @@ Además de las recomendaciones, TEO-BOT proporciona un enlace con la página
 
 ## Contenido de Carpetas 
 
-### Driver :
+#### Driver :
 Controlador usado en Microsoft Edge Versión 109.0.1518.55 
 
-### Gestión de Bodega:
+#### Gestión de Bodega:
 gestionar_bodega.py se encarga de agregar elemento a la bodega del local 
 
-### Main 
+#### Main 
 Aquí se encuentan los archivos principales del chatbot.Contiene el modelo de respuestas del chatbot y el controlador de sesiones. 
 
-### Modelo de reconocimiento de imágenes:
+#### Modelo de reconocimiento de imágenes:
 Contiene el modelo entrenado para el reconocimiento de imágenes mediante una URL 
 
-### Procesamiento de Características y Recomendaciones 
+#### Procesamiento de Características y Recomendaciones 
 Contiene los archivos que procesan los datos que da el usuario a través de la librería spaCy y la bodega del local. 
 
-### Diagramas de Flujo
+#### Diagramas de Flujo
 Diagramas del funcionamiento del código desarrollado.
 
-### Zip: 
+#### Zip: 
 Contiene los elementos de entrenamiento del modelo de reconocimiento de imágenes.
+
+## Requerimientos de funcionamiento:
+* Python 3.9.12
+* Librerías:
+    * Keras                         2.10.0
+    * Keras-Preprocessing           1.1.2
+    * Nltk                          3.7
+    * Numpy                          1.24.1
+    * Tensorflow                    2.10.1
+    * Tensorflow-estimator          2.10.0
+    * Tensorflow-io-gcs-filesystem  0.27.0
+    * Pillow                       9.4.0
+    * PyAutoIt                     0.6.5
+    * Requests                     2.28.2
+    * Scikit-learn                 1.2.0
+    * Selenium                     4.7.2
+    * Spacy                        3.5.0
+    * Spacy-legacy                 3.0.11
+    * Spacy-loggers                1.0.4
+    * Pandas                       1.5.2
