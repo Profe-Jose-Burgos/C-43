@@ -2,9 +2,9 @@
 
 ![TEO-BOT](/logos/teo.jpg)
 ## Chat Bot - TEO - Desarrolladores
-*Joseph Jahir Delgado Corella 
-*Jean Carlos Rodríguez Quintero
-*Raúl Omar Gutierrez Becerra
+* Joseph Jahir Delgado Corella 
+* Jean Carlos Rodríguez Quintero
+* Raúl Omar Gutierrez Becerra
 
  
 ## Funcionalidades: 
