@@ -9,7 +9,7 @@
  
 ## Funcionalidades: 
 
-- TEO-BOT es un bot para atención al cliente desarrollado para la empresa [Ralix Autos](https://jeanrodriguezq.github.io/index.html).
+- TEO-BOT es un bot para atención al cliente desarrollado para la empresa Ralix Autos.
 - Permite realizar recomendaciones a los usuarios en base a su selección. 
 - Ya sea por medio de una busqueda directa en la bodega o una recomendación que mejor se aproxime a las características que desea el usuario - Beta -. 
 - Además, en estado Beta se encuentra el procesamiento de una url de referencia para realizar recomendaciones realizando reconocimiento de imágenes y devolver un auto del mismo tipo en la bodega.
